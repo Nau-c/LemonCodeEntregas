@@ -1,16 +1,14 @@
+@charset "UTF-8";
 /* Sass (Syntactically Awesome Style Sheets) es un preprocesador de CSS que permite escribir hojas de estilo de manera más eficiente y organizada.
 Sass extiende la sintaxis de CSS y agrega características como variables, anidamiento, mixins y funciones, lo que facilita la creación y mantenimiento
 de hojas de estilo complejas. Sass se compila en CSS estándar que puede ser utilizado en cualquier navegador web. En el código que me muestras, 
 se puede ver que se utilizan clases de Sass para definir los colores de los cubos de colores. */
-
-
 /*Ejecuta el siguiente comando para instalar Sass como una dependencia de desarrollo es necesario tener en la máquina nodeJS:
 npm install sass --save-dev
 
 Ejecuta el siguiente comando para compilar tu archivo .scss en un archivo .css:
 npx sass input.scss output.css
   */
-
 .container-1 {
   display: flex;
   flex-wrap: wrap;
