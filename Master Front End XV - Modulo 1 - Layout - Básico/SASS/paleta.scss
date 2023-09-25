@@ -33,20 +33,23 @@ $base-color: #2196f3;
   color: white;
 }
 
+$red-dark: #8b0000;
+$red-light: #ff6347;
+
 .darken-4 {
-  background-color: darken($base-color, 80%);
+  background: linear-gradient(to bottom, $red-dark, darken($red-dark, 10%));
 }
 
 .darken-3 {
-  background-color: darken($base-color, 60%);
+  background: linear-gradient(to bottom, darken($red-dark, 10%), darken($red-dark, 20%));
 }
 
 .darken-2 {
-  background-color: darken($base-color, 40%);
+  background: linear-gradient(to bottom, darken($red-dark, 20%), darken($red-dark, 30%));
 }
 
 .darken-1 {
-  background-color: darken($base-color, 20%);
+  background: linear-gradient(to bottom, darken($red-dark, 30%), darken($red-dark, 40%));
 }
 
 .base-color {

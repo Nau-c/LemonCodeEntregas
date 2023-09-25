@@ -29,19 +29,19 @@ npx sass input.scss output.css
 }
 
 .darken-4 {
-  background-color: black;
+  background: linear-gradient(to bottom, #8b0000, #580000);
 }
 
 .darken-3 {
-  background-color: black;
+  background: linear-gradient(to bottom, #580000, #250000);
 }
 
 .darken-2 {
-  background-color: #042844;
+  background: linear-gradient(to bottom, #250000, black);
 }
 
 .darken-1 {
-  background-color: #0960a5;
+  background: linear-gradient(to bottom, black, black);
 }
 
 .base-color {
@@ -68,4 +68,4 @@ npx sass input.scss output.css
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/*# sourceMappingURL=paleta.css.map */
+/*# sourceMappingURL=paleta.paleta.css.map */
