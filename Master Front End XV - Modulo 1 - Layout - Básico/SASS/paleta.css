@@ -1,18 +1,14 @@
+@charset "UTF-8";
 /* Sass (Syntactically Awesome Style Sheets) es un preprocesador de CSS que permite escribir hojas de estilo de manera más eficiente y organizada.
 Sass extiende la sintaxis de CSS y agrega características como variables, anidamiento, mixins y funciones, lo que facilita la creación y mantenimiento
 de hojas de estilo complejas. Sass se compila en CSS estándar que puede ser utilizado en cualquier navegador web. En el código que me muestras, 
 se puede ver que se utilizan clases de Sass para definir los colores de los cubos de colores. */
-
-
 /*Ejecuta el siguiente comando para instalar Sass como una dependencia de desarrollo es necesario tener en la máquina nodeJS:
 npm install sass --save-dev
 
 Ejecuta el siguiente comando para compilar tu archivo .scss en un archivo .css:
 npx sass input.scss output.css
   */
-
-
-
 .container-1 {
   display: flex;
   flex-wrap: wrap;
@@ -32,48 +28,46 @@ npx sass input.scss output.css
   color: white;
 }
 
-$red-dark: #f44336;
-$red-light: #ff6347;
-$base-color: $red-dark;
-
 .darken-1 {
-  background: darken($base-color, 10%);
+  background: #ea1c0d;
 }
+
 .darken-2 {
-  background: darken($base-color, 20%);
+  background: #ba160a;
 }
+
 .darken-3 {
-  background: darken($base-color, 30%);
+  background: #891008;
 }
+
 .darken-4 {
-  background: darken($base-color, 40%);
+  background: #590b05;
 }
 
 .base-color {
-  background-color: $base-color;
+  background-color: #f44336;
   text-align: center;
   display: flex;
 }
 
-$light-color: #8b0000;
-$light-opacity: 0.3;
-
 .lighten-1 {
-  background-color: lighten($base-color, 10%);
+  background-color: #f77066;
 }
 
 .lighten-2 {
-  background-color: lighten($base-color, 20%);
+  background-color: #f99d97;
 }
 
 .lighten-3 {
-  background-color: lighten($base-color, 30%);
+  background-color: #fccbc7;
 }
 
 .lighten-4 {
-  background-color: lighten($base-color, 40%);
+  background-color: #fff8f7;
 }
 
 .color-box-text {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+
+/*# sourceMappingURL=paleta.css.map */
