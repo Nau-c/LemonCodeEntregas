@@ -57,18 +57,21 @@ $colors: (
     align-items: center;
     font-size: 1.5rem;
     color: white;
+    border-radius: 8px
   }
 
   .color-box-text {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   }
 
-  $darken-amount: 10%;
+$percentage: 5%;
+$current-percentage: $percentage;
+
   @for $i from 1 through 4 {
     .darken-#{$color-name}-#{$i} {
-      background: darken($base-color, $darken-amount);
+      background: darken($base-color, $current-percentage);
     }
-    $darken-amount: $darken-amount + 10%;
+    $current-percentage: $current-percentage + $percentage;
   }
 
   .base-#{$color-name} {
@@ -77,15 +80,14 @@ $colors: (
     display: flex;
   }
 
-  $lighten-amount: 10%;
+  $current-percentage: $percentage;
   @for $i from 1 through 4 {
     .lighten-#{$color-name}-#{$i} {
-      background-color: lighten($base-color, $lighten-amount);
+      background-color: lighten($base-color, $current-percentage);
     }
-    $lighten-amount: $lighten-amount + 10%;
+   $current-percentage: $current-percentage + $percentage;
   }
 }
-
 
 // $base-color: #f44336;
 

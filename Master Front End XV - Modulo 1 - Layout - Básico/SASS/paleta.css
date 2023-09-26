@@ -25,6 +25,7 @@ npx sass input.scss output.css
   align-items: center;
   font-size: 1.5rem;
   color: white;
+  border-radius: 8px;
 }
 
 .color-box-text {
@@ -32,19 +33,19 @@ npx sass input.scss output.css
 }
 
 .darken-red-1 {
-  background: #ea1c0d;
+  background: #f32c1e;
 }
 
 .darken-red-2 {
-  background: #ba160a;
+  background: #ea1c0d;
 }
 
 .darken-red-3 {
-  background: #891008;
+  background: #d2190b;
 }
 
 .darken-red-4 {
-  background: #590b05;
+  background: #ba160a;
 }
 
 .base-red {
@@ -54,19 +55,19 @@ npx sass input.scss output.css
 }
 
 .lighten-red-1 {
-  background-color: #f77066;
+  background-color: #f55a4e;
 }
 
 .lighten-red-2 {
-  background-color: #f99d97;
+  background-color: #f77066;
 }
 
 .lighten-red-3 {
-  background-color: #fccbc7;
+  background-color: #f8877f;
 }
 
 .lighten-red-4 {
-  background-color: #fff8f7;
+  background-color: #f99d97;
 }
 
 .container-green {
@@ -85,6 +86,7 @@ npx sass input.scss output.css
   align-items: center;
   font-size: 1.5rem;
   color: white;
+  border-radius: 8px;
 }
 
 .color-box-text {
@@ -92,19 +94,19 @@ npx sass input.scss output.css
 }
 
 .darken-green-1 {
-  background: #13bd57;
+  background: #15d462;
 }
 
 .darken-green-2 {
-  background: #0e8f42;
+  background: #13bd57;
 }
 
 .darken-green-3 {
-  background: #0a602c;
+  background: #11a64c;
 }
 
 .darken-green-4 {
-  background: #053217;
+  background: #0e8f42;
 }
 
 .base-green {
@@ -114,19 +116,19 @@ npx sass input.scss output.css
 }
 
 .lighten-green-1 {
-  background-color: #49ed8b;
+  background-color: #32ea7c;
 }
 
 .lighten-green-2 {
-  background-color: #78f1a8;
+  background-color: #49ed8b;
 }
 
 .lighten-green-3 {
-  background-color: #a6f6c6;
+  background-color: #60ef99;
 }
 
 .lighten-green-4 {
-  background-color: #d4fbe4;
+  background-color: #78f1a8;
 }
 
 .container-blue {
@@ -145,6 +147,7 @@ npx sass input.scss output.css
   align-items: center;
   font-size: 1.5rem;
   color: white;
+  border-radius: 8px;
 }
 
 .color-box-text {
@@ -152,19 +155,19 @@ npx sass input.scss output.css
 }
 
 .darken-blue-1 {
-  background: #008dcc;
+  background: #009ee6;
 }
 
 .darken-blue-2 {
-  background: #006a99;
+  background: #008dcc;
 }
 
 .darken-blue-3 {
-  background: #004666;
+  background: #007bb3;
 }
 
 .darken-blue-4 {
-  background: #002333;
+  background: #006a99;
 }
 
 .base-blue {
@@ -174,19 +177,19 @@ npx sass input.scss output.css
 }
 
 .lighten-blue-1 {
-  background-color: #33c0ff;
+  background-color: #1ab8ff;
 }
 
 .lighten-blue-2 {
-  background-color: #66d0ff;
+  background-color: #33c0ff;
 }
 
 .lighten-blue-3 {
-  background-color: #99dfff;
+  background-color: #4dc8ff;
 }
 
 .lighten-blue-4 {
-  background-color: #ccefff;
+  background-color: #66d0ff;
 }
 
 /*# sourceMappingURL=paleta.css.map */
