@@ -9,15 +9,14 @@ npm install sass --save-dev
 Ejecuta el siguiente comando para compilar tu archivo .scss en un archivo .css:
 npx sass input.scss output.css
   */
-.container-1 {
+.container-red {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-.box {
+.box-red {
   width: 100px;
   height: 100px;
   margin: 10px;
@@ -28,46 +27,166 @@ npx sass input.scss output.css
   color: white;
 }
 
-.darken-1 {
+.color-box-text {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.darken-red-1 {
   background: #ea1c0d;
 }
 
-.darken-2 {
+.darken-red-2 {
   background: #ba160a;
 }
 
-.darken-3 {
+.darken-red-3 {
   background: #891008;
 }
 
-.darken-4 {
+.darken-red-4 {
   background: #590b05;
 }
 
-.base-color {
+.base-red {
   background-color: #f44336;
   text-align: center;
   display: flex;
 }
 
-.lighten-1 {
+.lighten-red-1 {
   background-color: #f77066;
 }
 
-.lighten-2 {
+.lighten-red-2 {
   background-color: #f99d97;
 }
 
-.lighten-3 {
+.lighten-red-3 {
   background-color: #fccbc7;
 }
 
-.lighten-4 {
+.lighten-red-4 {
   background-color: #fff8f7;
+}
+
+.container-green {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-green {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .color-box-text {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.darken-green-1 {
+  background: #13bd57;
+}
+
+.darken-green-2 {
+  background: #0e8f42;
+}
+
+.darken-green-3 {
+  background: #0a602c;
+}
+
+.darken-green-4 {
+  background: #053217;
+}
+
+.base-green {
+  background-color: #1be86d;
+  text-align: center;
+  display: flex;
+}
+
+.lighten-green-1 {
+  background-color: #49ed8b;
+}
+
+.lighten-green-2 {
+  background-color: #78f1a8;
+}
+
+.lighten-green-3 {
+  background-color: #a6f6c6;
+}
+
+.lighten-green-4 {
+  background-color: #d4fbe4;
+}
+
+.container-blue {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-blue {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.color-box-text {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.darken-blue-1 {
+  background: #008dcc;
+}
+
+.darken-blue-2 {
+  background: #006a99;
+}
+
+.darken-blue-3 {
+  background: #004666;
+}
+
+.darken-blue-4 {
+  background: #002333;
+}
+
+.base-blue {
+  background-color: #00b0ff;
+  text-align: center;
+  display: flex;
+}
+
+.lighten-blue-1 {
+  background-color: #33c0ff;
+}
+
+.lighten-blue-2 {
+  background-color: #66d0ff;
+}
+
+.lighten-blue-3 {
+  background-color: #99dfff;
+}
+
+.lighten-blue-4 {
+  background-color: #ccefff;
 }
 
 /*# sourceMappingURL=paleta.css.map */

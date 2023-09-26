@@ -11,69 +11,189 @@ Ejecuta el siguiente comando para compilar tu archivo .scss en un archivo .css:
 npx sass input.scss output.css
   */
 
+// .container-1, .container-2, .container-3 {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-items: center;
+// }
 
+// .box, .box2, .box3 {
+//   width: 100px;
+//   height: 100px;
+//   margin: 10px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 1.5rem;
+//   color: white;
+// }
 
-.container-1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+// .color-box-text {
+//   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+// }
+
+// Define una lista de colores base
+$colors: (
+  red: #f44336,
+  green: #1be86d,
+  blue: #00b0ff
+);
+
+@each $color-name, $base-color in $colors {
+  .container-#{$color-name} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-#{$color-name} {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .color-box-text {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  $darken-amount: 10%;
+  @for $i from 1 through 4 {
+    .darken-#{$color-name}-#{$i} {
+      background: darken($base-color, $darken-amount);
+    }
+    $darken-amount: $darken-amount + 10%;
+  }
+
+  .base-#{$color-name} {
+    background-color: $base-color;
+    text-align: center;
+    display: flex;
+  }
+
+  $lighten-amount: 10%;
+  @for $i from 1 through 4 {
+    .lighten-#{$color-name}-#{$i} {
+      background-color: lighten($base-color, $lighten-amount);
+    }
+    $lighten-amount: $lighten-amount + 10%;
+  }
 }
 
-.box {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: white;
-}
 
-$red-dark: #f44336;
-$red-light: #ff6347;
-$base-color: $red-dark;
+// $base-color: #f44336;
 
-.darken-1 {
-  background: darken($base-color, 10%);
-}
-.darken-2 {
-  background: darken($base-color, 20%);
-}
-.darken-3 {
-  background: darken($base-color, 30%);
-}
-.darken-4 {
-  background: darken($base-color, 40%);
-}
+// .darken-1 {
+//   background: darken($base-color, 10%);
+// }
+// .darken-2 {
+//   background: darken($base-color, 20%);
+// }
+// .darken-3 {
+//   background: darken($base-color, 30%);
+// }
+// .darken-4 {
+//   background: darken($base-color, 40%);
+// }
 
-.base-color {
-  background-color: $base-color;
-  text-align: center;
-  display: flex;
-}
+// .base-color {
+//   background-color: $base-color;
+//   text-align: center;
+//   display: flex;
+// }
 
-$light-color: #8b0000;
-$light-opacity: 0.3;
+// .lighten-1 {
+//   background-color: lighten($base-color, 10%);
+// }
 
-.lighten-1 {
-  background-color: lighten($base-color, 10%);
-}
+// .lighten-2 {
+//   background-color: lighten($base-color, 20%);
+// }
 
-.lighten-2 {
-  background-color: lighten($base-color, 20%);
-}
+// .lighten-3 {
+//   background-color: lighten($base-color, 30%);
+// }
 
-.lighten-3 {
-  background-color: lighten($base-color, 30%);
-}
+// .lighten-4 {
+//   background-color: lighten($base-color, 40%);
+// }
 
-.lighten-4 {
-  background-color: lighten($base-color, 40%);
-}
+// $base-color: #1be86d;
 
-.color-box-text {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
+// .darkenG-1 {
+//   background: darken($base-color, 10%);
+// }
+// .darkenG-2 {
+//   background: darken($base-color, 20%);
+// }
+// .darkenG-3 {
+//   background: darken($base-color, 30%);
+// }
+// .darkenG-4 {
+//   background: darken($base-color, 40%);
+// }
+
+// .baseG-color {
+//   background-color: $base-color;
+//   text-align: center;
+//   display: flex;
+// }
+
+// .lightenG-1 {
+//   background-color: lighten($base-color, 10%);
+// }
+
+// .lightenG-2 {
+//   background-color: lighten($base-color, 20%);
+// }
+
+// .lightenG-3 {
+//   background-color: lighten($base-color, 30%);
+// }
+
+// .lightenG-4 {
+//   background-color: lighten($base-color, 40%);
+// }
+
+// $base-color: #00b0ff;
+
+// .darkenB-1 {
+//   background: darken($base-color, 10%);
+// }
+// .darkenB-2 {
+//   background: darken($base-color, 20%);
+// }
+// .darkenB-3 {
+//   background: darken($base-color, 30%);
+// }
+// .darkenB-4 {
+//   background: darken($base-color, 40%);
+// }
+
+// .baseB-color {
+//   background-color: $base-color;
+//   text-align: center;
+//   display: flex;
+// }
+
+// .lightenB-1 {
+//   background-color: lighten($base-color, 10%);
+// }
+
+// .lightenB-2 {
+//   background-color: lighten($base-color, 20%);
+// }
+
+// .lightenB-3 {
+//   background-color: lighten($base-color, 30%);
+// }
+
+// .lightenB-4 {
+//   background-color: lighten($base-color, 40%);
+// }
