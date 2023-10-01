@@ -1,0 +1,90 @@
+@import "variables";
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+// Tema 1
+.theme-A {
+  
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 40px;
+  margin-top: 40px;
+  color: black;
+  font-family: $themeA-font;
+  text-align: center;
+}
+
+.theme-A .box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 40px;
+  margin-top: 40px;
+  justify-content: center;
+  border: $themeA-border;
+}
+
+.darken-red-1 {
+    background: $themeA-color;
+}
+
+.theme-A .shadow {
+    box-shadow: $themeA-box-shadow;
+  }
+
+// Tema 2
+.theme-B {
+  
+  color: black;
+  font-family: $themeB-font;
+  text-align: center;
+
+}
+
+.theme-B .box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 40px;
+  margin-top: 40px;
+  justify-content: center;
+  border-radius: $themeB-border-radius;
+}
+
+.darken-blue-1 {
+    background: $themeB-color;
+}
+
+.theme-B .shadow {
+  box-shadow: $themeB-box-shadow;
+}
+
+
+// .box {
+//   width: 100px;
+//   height: 100px;
+//   margin: 10px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 1.5rem;
+//   color: white;
+//   transition: all 0.3s ease-in-out;
+// }
+
+// .color-box-text {
+//   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+// }
