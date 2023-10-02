@@ -33,6 +33,14 @@
   background: #f44336;
 }
 
+.darken-red-2 {
+  background: hsl(0, 77%, 29%);
+}
+
+.darken-red-3 {
+  background: hwb(0 66% 7%/0.5);
+}
+
 .theme-A .shadow {
   box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -57,7 +65,15 @@
 }
 
 .darken-blue-1 {
-  background: #00b0ff;
+  background: hsl(199, 100%, 44%);
+}
+
+.darken-blue-2 {
+  background: hsl(199, 100%, 18%);
+}
+
+.darken-blue-3 {
+  background: hsl(187, 80%, 71%);
 }
 
 .theme-B .shadow {
