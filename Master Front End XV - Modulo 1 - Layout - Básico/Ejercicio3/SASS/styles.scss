@@ -1,0 +1,63 @@
+// Importar variables y mixins
+@import 'variables';
+@import 'mixins';
+
+// Estilos base para el cuerpo y el encabezado
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+}
+
+header {
+    background-color: $color-fondo;
+    color: $color-texto;
+    padding: 10px;
+}
+
+// Estilos para la barra de navegación
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        font-size: 24px;
+        text-decoration: none;
+        color: $color-texto;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        li {
+            @include margen-derecho(20px);
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: $color-texto;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+// Media query para resoluciones mayores
+@media screen and (min-width: 768px) {
+    .navbar {
+        .nav-list {
+            margin-left: auto;
+
+            li {
+                @include margen-derecho(40px);
+            }
+        }
+    }
+}

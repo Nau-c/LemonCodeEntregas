@@ -35,9 +35,9 @@ npx sass input.scss output.css
 
 // Define una lista de colores base
 $colors: (
-  red: #f44336,
-  green: #1be86d,
-  blue: #00b0ff
+  "red": #f44336,
+  "green": #1be86d,
+  "blue": #00b0ff
 );
 
 @each $color-name, $base-color in $colors {
@@ -57,15 +57,15 @@ $colors: (
     align-items: center;
     font-size: 1.5rem;
     color: white;
-    border-radius: 8px
+    border-radius: 8px;
   }
 
   .color-box-text {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   }
 
-$percentage: 5%;
-$current-percentage: $percentage;
+  $percentage: 5%;
+  $current-percentage: $percentage;
 
   @for $i from 1 through 4 {
     .darken-#{$color-name}-#{$i} {
@@ -85,9 +85,10 @@ $current-percentage: $percentage;
     .lighten-#{$color-name}-#{$i} {
       background-color: lighten($base-color, $current-percentage);
     }
-   $current-percentage: $current-percentage + $percentage;
+    $current-percentage: $current-percentage + $percentage;
   }
 }
+
 
 // $base-color: #f44336;
 

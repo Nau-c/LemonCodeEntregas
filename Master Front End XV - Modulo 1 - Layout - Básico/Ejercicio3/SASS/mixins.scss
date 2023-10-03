@@ -1,0 +1,11 @@
+// Mixin para establecer márgenes derechos
+@mixin margen-derecho($valor) {
+    margin-right: $valor;
+}
+
+// Mixin para centrar elementos en el eje Y
+@mixin centrar-verticalmente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
