@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -17,15 +16,15 @@
 }
 
 .theme-A .box {
-  width: 100px;
+  width: 130px;
   height: 100px;
   margin: 10px;
   gap: 10px;
   display: flex;
-  flex-direction: column;
   margin-inline: 40px;
   margin-top: 40px;
   justify-content: center;
+  align-items: center;
   border: 8px;
 }
 
@@ -41,26 +40,26 @@
   background: hwb(0 66% 7%/0.5);
 }
 
-.theme-A .shadow {
-  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
+.darken-red-shadow {
+  box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 .theme-B {
   color: black;
-  font-family: Georgia, serif;
+  font-family: Georgia, sans-serif;
   text-align: center;
 }
 
 .theme-B .box {
-  width: 100px;
+  width: 130px;
   height: 100px;
   margin: 10px;
   gap: 10px;
   display: flex;
-  flex-direction: column;
   margin-inline: 40px;
   margin-top: 40px;
   justify-content: center;
+  align-items: center;
   border-radius: 16px;
 }
 
@@ -76,8 +75,17 @@
   background: hsl(187, 80%, 71%);
 }
 
-.theme-B .shadow {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+.font {
+  font-family: Arial, sans-serif;
+}
+
+.font-1 {
+  font-family: Georgia, sans-serif;
+  font-weight: bold;
+}
+
+.darken-blue-shadow {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=estilos.css.map */

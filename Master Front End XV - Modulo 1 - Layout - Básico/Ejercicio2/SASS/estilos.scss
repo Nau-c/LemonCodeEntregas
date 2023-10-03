@@ -3,14 +3,13 @@
 
 .container {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 // Tema 1
 .theme-A {
-  
   gap: 10px;
   display: flex;
   flex-direction: column;
@@ -22,15 +21,16 @@
 }
 
 .theme-A .box {
-  width: 100px;
+  width: 130px;
   height: 100px;
   margin: 10px;
   gap: 10px;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   margin-inline: 40px;
   margin-top: 40px;
   justify-content: center;
+  align-items: center;
   border: $themeA-border;
 }
 
@@ -46,9 +46,10 @@
     background: $themeA3-color;
 }
 
-.theme-A .shadow {
+.darken-red-shadow {
     box-shadow: $themeA-box-shadow;
   }
+
 
 // Tema 2
 .theme-B {
@@ -60,15 +61,16 @@
 }
 
 .theme-B .box {
-  width: 100px;
+  width: 130px;
   height: 100px;
   margin: 10px;
   gap: 10px;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   margin-inline: 40px;
   margin-top: 40px;
   justify-content: center;
+  align-items: center;
   border-radius: $themeB-border-radius;
 }
 
@@ -84,7 +86,15 @@
     background: $themeB3-color;
 }
 
-.theme-B .shadow {
+.font {
+  font-family: $themeA-font;
+}
+.font-1 {
+  font-family: $themeB-font;
+  font-weight: bold;
+}
+
+.darken-blue-shadow {
   box-shadow: $themeB-box-shadow;
 }
 
