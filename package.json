@@ -1,0 +1,26 @@
+{
+  "name": "layout",
+  "version": "1.0.0",
+  "description": "Laboratorio Módulo Layout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nau-c/LemonCodeEntregas.git"
+  },
+  "keywords": [
+    "Sass",
+    "CSS",
+    "Layout",
+    "Modulo",
+    "Laboratprio"
+  ],
+  "author": "Nauzet López Mendoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nau-c/LemonCodeEntregas/issues"
+  },
+  "homepage": "https://github.com/Nau-c/LemonCodeEntregas#readme"
+}
