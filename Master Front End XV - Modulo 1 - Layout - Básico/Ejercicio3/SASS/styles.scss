@@ -11,8 +11,8 @@ body {
 
 header {
     background-color: $color-fondo;
-    color: $color-texto;
     padding: 10px;
+
 }
 
 // Estilos para la barra de navegación
@@ -20,44 +20,56 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-    .logo {
-        font-size: 24px;
-        text-decoration: none;
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    
+
+    li {
+      margin: 0 10px;
+      width: 150px;
+      
+      
+      
+      a {
+          padding: 10px;
+          text-decoration: none;
         color: $color-texto;
-    }
-
-    .nav-list {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-
-        li {
-            @include margen-derecho(20px);
-
-            &:last-child {
-                margin-right: 0;
-            }
-
-            a {
-                text-decoration: none;
-                color: $color-texto;
-                font-weight: bold;
-            }
+        &:hover {
+            background-color: $color-destacado;
+            color: $color-destacado-hover;
         }
+      }
     }
-}
+  }
 
-// Media query para resoluciones mayores
-@media screen and (min-width: 768px) {
-    .navbar {
-        .nav-list {
-            margin-left: auto;
+    // Media query para resoluciones menores
+    @media screen and (max-width: 767px) {
+        .menu {
+            flex-direction: column;
+            width: 100%;
+            background-color: $color-fondo;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
 
+      
             li {
-                @include margen-derecho(40px);
+              margin: 10px 0;
+              width: 100%;
             }
         }
+      
+    
     }
-}
+
+
+
