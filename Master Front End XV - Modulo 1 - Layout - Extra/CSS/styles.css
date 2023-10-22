@@ -116,6 +116,7 @@ footer {
   }
   nav {
     width: 100vw;
+    position: fixed;
   }
   .toolbar {
     display: none; /* Ocultar la barra superior en resoluciones pequeñas */
@@ -176,6 +177,7 @@ footer {
     width: 96.5vw;
     height: auto;
     overflow-y: scroll;
+    margin-top: 40px;
   }
   .list::-webkit-scrollbar {
     width: 5px;
@@ -184,18 +186,24 @@ footer {
   }
   .item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 15px;
     align-items: center;
     padding: 5px 25px;
     background-color: rgb(253, 253, 253);
     border: 1px solid black;
-    width: 60vw;
-    height: 70vw;
+    width: 70vw;
+    height: 30vw;
+    gap: 15px;
+  }
+  .member-name {
+    font-size: 1.2rem;
+    text-align: left;
   }
   .card > img {
-    height: auto;
     border-radius: 50%;
+    width: 90px;
+    height: 90px;
   }
   footer {
     width: 100vw;
