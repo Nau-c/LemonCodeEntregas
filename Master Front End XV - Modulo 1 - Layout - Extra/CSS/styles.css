@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -28,8 +29,6 @@ body {
 
 .menu-container {
   height: 100%;
-  justify-content: space-between;
-  flex-direction: column;
   background-color: rgb(21, 94, 19);
   color: hsl(0, 0%, 0%);
 }
@@ -106,6 +105,102 @@ footer {
   height: 20px;
   bottom: 0;
   padding-left: 6px;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+  main {
+    width: 0;
+  }
+  nav {
+    width: 100vw;
+  }
+  .toolbar {
+    display: none; /* Ocultar la barra superior en resoluciones pequeñas */
+  }
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: hsl(96, 88%, 60%);
+    color: azure;
+    padding: 4px;
+    width: 100vw;
+  }
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    height: 97vh;
+    overflow-y: scroll;
+  }
+  .menu-container {
+    width: 102vw;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(21, 94, 19);
+    color: hsl(0, 0%, 0%);
+    align-items: center;
+  }
+  .menu-title {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Espacio uniforme entre los elementos */
+    margin-top: 10px;
+    overflow: scroll; /* Espacio superior entre la barra y la lista de elementos */
+  }
+  li {
+    background-color: hsl(28, 60%, 82%);
+    border: 1px solid black;
+    padding: 10px; /* Mayor espacio interno para mejorar la usabilidad en pantallas táctiles */
+    margin: 4px;
+    display: flex; /* Colocar los elementos en una sola línea */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan si no caben en la pantalla */
+    align-items: center;
+    justify-content: center;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: hwb(30 76% 22%);
+    border: 1px solid black;
+    width: 96.5vw;
+    height: auto;
+    overflow-y: scroll;
+  }
+  .list::-webkit-scrollbar {
+    width: 5px;
+    background-color: hsl(108, 34%, 48%);
+    justify-items: center;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    align-items: center;
+    padding: 5px 25px;
+    background-color: rgb(253, 253, 253);
+    border: 1px solid black;
+    width: 60vw;
+    height: 70vw;
+  }
+  .card > img {
+    height: auto;
+    border-radius: 50%;
+  }
+  footer {
+    width: 100vw;
+    background-color: hsl(28, 60%, 82%);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
