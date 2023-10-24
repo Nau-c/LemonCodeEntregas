@@ -1,0 +1,82 @@
+/* Estilo global */
+body {
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo del encabezado */
+  header {
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+  
+  .header-logo {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+  }
+  
+  .header-logo img {
+    width: 40px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .header-buttons {
+    display: flex;
+  }
+  
+  .header-buttons div {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  /* Estilo de los títulos de sección */
+  .section-title {
+    font-size: 24px;
+    margin: 20px;
+  }
+  
+  /* Estilo de las secciones de imágenes */
+  section {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+  }
+  
+  /* Estilo de los elementos de imagen */
+  .top-item, .item {
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  
+  /* Establecer un ancho y alto fijo para las imágenes */
+  .top-item img, .item img {
+    width: 200px; /* Ajusta el tamaño de las imágenes según tus necesidades */
+    height: 300px;
+  }
+  
+  /* Estilo del pie de página (footer) */
+  footer {
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Estilo de los enlaces en el footer */
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Estilo del enlace visitado en el footer */
+  footer a:visited {
+    color: #aaa;
+  }
+  
