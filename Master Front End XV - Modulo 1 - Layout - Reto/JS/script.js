@@ -2,7 +2,7 @@
 function changeTextSecondScreenSize() {
     const elemento = document.getElementById('top-text');
     
-    if (window.innerWidth < 1280) {
+    if (window.innerWidth < 1367) {
       elemento.textContent = "3";
     } else {
       elemento.textContent = "5";
