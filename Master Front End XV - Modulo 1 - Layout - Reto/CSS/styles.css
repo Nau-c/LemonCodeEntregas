@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* Estilo global */
+:root {
+  --background-color: #141414;
+}
+
 body {
+  background-color: var(--background-color);
   font-family: "Jost", sans-serif;
   margin: 0;
   padding: 0;
@@ -8,7 +13,6 @@ body {
 
 /* Estilo del encabezado */
 header {
-  background-color: #333; /* Cambia el color de fondo según tus preferencias */
   color: #fff; /* Cambia el color del texto según tus preferencias */
   display: flex;
   justify-content: space-between;
@@ -19,7 +23,6 @@ header {
 .header-logo {
   display: flex;
   align-items: center;
-  background-color: #333;
 }
 
 .header-logo img {
@@ -37,10 +40,15 @@ header {
   cursor: pointer;
 }
 
+.top-text {
+  font-weight: 800;
+}
+
 /* Estilo de los títulos de sección */
 .section-title {
   font-size: 24px;
   margin: 20px;
+  color: #fff;
 }
 
 /* Estilo de las secciones de imágenes */
@@ -79,6 +87,20 @@ footer a {
 /* Estilo del enlace visitado en el footer */
 footer a:visited {
   color: #aaa;
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    width: 100%;
+  }
+  /* Estilo del encabezado */
+  header {
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
