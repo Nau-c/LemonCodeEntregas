@@ -1,6 +1,4 @@
-@import "temaA";
-@import "temaB";
-
+@import "temaB"; // Import A or B
 
 .container {
   display: flex;
@@ -10,18 +8,18 @@
 }
 
 // Tema 1
-.theme-A {
+.theme {
   gap: 10px;
   display: flex;
   flex-direction: column;
   margin-inline: 40px;
   margin-top: 40px;
   color: black;
-  font-family: $themeA-font;
+  font-family: $theme-font;
   text-align: center;
 }
 
-.theme-A .box {
+.theme .box {
   width: 130px;
   height: 100px;
   margin: 10px;
@@ -32,86 +30,34 @@
   margin-top: 40px;
   justify-content: center;
   align-items: center;
-  border: $themeA-border;
+  border: $theme-border;
 }
 
-.darken-red-1 {
-    background: $themeA1-color;
+.darken-1 {
+    background: $theme1-color;
 }
 
-.darken-red-2 {
-    background: $themeA2-color;
+.darken-2 {
+    background: $theme2-color;
 }
 
-.darken-red-3 {
-    background: $themeA3-color;
-}
-
-.darken-red-shadow {
-    box-shadow: $themeA-box-shadow;
-  }
-
-
-// Tema 2
-.theme-B {
-  
-  color: black;
-  font-family: $themeB-font;
-  text-align: center;
-
-}
-
-.theme-B .box {
-  width: 130px;
-  height: 100px;
-  margin: 10px;
-  gap: 10px;
-  display: flex;
-  // flex-direction: column;
-  margin-inline: 40px;
-  margin-top: 40px;
-  justify-content: center;
-  align-items: center;
-  border-radius: $themeB-border-radius;
-}
-
-.darken-blue-1 {
-    background: $themeB1-color;
-}
-
-.darken-blue-2 {
-    background: $themeB2-color;
-}
-
-.darken-blue-3 {
-    background: $themeB3-color;
+.darken-3 {
+    background: $theme3-color;
 }
 
 .font {
-  font-family: $themeA-font;
+  font-family: $theme-font;
 }
+
 .font-1 {
-  font-family: $themeB-font;
+  font-family: $theme-font;
   font-weight: bold;
 }
 
-.darken-blue-shadow {
-  box-shadow: $themeB-box-shadow;
+.darken-shadow {
+    box-shadow: $theme-box-shadow;
 }
 
-
-// .box {
-//   width: 100px;
-//   height: 100px;
-//   margin: 10px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 1.5rem;
-//   color: white;
-//   transition: all 0.3s ease-in-out;
-// }
-
-// .color-box-text {
-//   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-// }
+.color-box-text {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}

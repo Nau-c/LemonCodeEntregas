@@ -4,53 +4,18 @@
   align-items: center;
 }
 
-.theme-A {
+.theme {
   gap: 10px;
   display: flex;
   flex-direction: column;
   margin-inline: 40px;
   margin-top: 40px;
   color: black;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.theme-A .box {
-  width: 130px;
-  height: 100px;
-  margin: 10px;
-  gap: 10px;
-  display: flex;
-  margin-inline: 40px;
-  margin-top: 40px;
-  justify-content: center;
-  align-items: center;
-  border: 8px;
-}
-
-.darken-red-1 {
-  background: #f44336;
-}
-
-.darken-red-2 {
-  background: hsl(0, 77%, 29%);
-}
-
-.darken-red-3 {
-  background: hwb(0 66% 7%/0.5);
-}
-
-.darken-red-shadow {
-  box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.5);
-}
-
-.theme-B {
-  color: black;
   font-family: Georgia, sans-serif;
   text-align: center;
 }
 
-.theme-B .box {
+.theme .box {
   width: 130px;
   height: 100px;
   margin: 10px;
@@ -60,23 +25,23 @@
   margin-top: 40px;
   justify-content: center;
   align-items: center;
-  border-radius: 16px;
+  border: 16px;
 }
 
-.darken-blue-1 {
+.darken-1 {
   background: hsl(199, 100%, 44%);
 }
 
-.darken-blue-2 {
+.darken-2 {
   background: hsl(199, 100%, 18%);
 }
 
-.darken-blue-3 {
+.darken-3 {
   background: hsl(187, 80%, 71%);
 }
 
 .font {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, sans-serif;
 }
 
 .font-1 {
@@ -84,8 +49,12 @@
   font-weight: bold;
 }
 
-.darken-blue-shadow {
+.darken-shadow {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-box-text {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=estilos.css.map */
