@@ -70,7 +70,6 @@ console.log('concatMultiple', concatMultiple([1, 2, 3, 4], ['a', 'b', 'c', 'd'],
 // Clone
 //Implementa una función clone que, a partir de un objeto de entrada source devuelva un nuevo objeto con las propiedades de source:
 function clone(source) {
-    // Implementation here.
     return __assign({}, source);
 }
 // Ejemplo
@@ -84,7 +83,6 @@ var a = { name: 'Maria', surname: 'Ibañez', country: 'SPA' };
 var b = { name: 'Luisa', age: 31, married: true };
 //TIP: Puedes usar la función "clone" del apartado A.
 function merge(source, target) {
-    // Implementation here.
     return __assign(__assign({}, target), source);
 }
 console.log('merge', merge(a, b));
@@ -131,7 +129,7 @@ var SlothMachine = /** @class */ (function () {
         var random3 = Math.random() >= 0.5;
         if (random1 && random2 && random3) {
             console.log(random1, random2, random3);
-            console.log("Congratulations!!!. You won ".concat(this === null || this === void 0 ? void 0 : this.coins, " coins!!"));
+            console.log("Congratulations!!!. You won ".concat(this.coins, " coins!!"));
             this.coins = 0;
         }
         else {
@@ -142,8 +140,12 @@ var SlothMachine = /** @class */ (function () {
 }());
 // Ejemplo de uso
 var machine1 = new SlothMachine();
-console.log('Machine1', machine1.play()); // "Good luck next time!!"
-console.log('Machine2', machine1.play()); // "Good luck next time!!"
-console.log('Machine3', machine1.play()); // "Congratulations!!!. You won 3 coins!!"
-console.log('Machine4', machine1.play()); // "Good luck next time!!"
-console.log('Machine5', machine1.play()); // "Congratulations!!!. You won 2 coins!!"
+machine1.play(); // "Good luck next time!!"
+var machine2 = new SlothMachine();
+machine2.play(); // "Good luck next time!!"
+var machine3 = new SlothMachine();
+machine3.play(); // "Congratulations!!!. You won 3 coins!!"
+var machine4 = new SlothMachine();
+machine4.play(); // "Good luck next time!!"
+var machine5 = new SlothMachine();
+machine5.play(); // "Congratulations!!!. You won 2 coins!!"

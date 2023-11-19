@@ -60,28 +60,30 @@ console.log('concatMultiple',concatMultiple([1,2,3,4], ['a','b','c','d'], ['e','
 // 3. Clone Merge
 // Clone
 //Implementa una función clone que, a partir de un objeto de entrada source devuelva un nuevo objeto con las propiedades de source:
-
-function clone <T>(source: T[]): T[] {
-   // Implementation here.
+function clone <T>(source: T): T {
    return {...source};
 }
-
 // Ejemplo
 const person = { name: 'Maria', age: 25, address: { city: 'Barcelona' }, brothers: ['Juan', 'Marta' , {children:'pepe'}] };
 const clonedPerson = clone( person );
 console.log('clone',clonedPerson); //clone {name: 'Maria',age: 25,address: { city: 'Barcelona' },brothers: [ 'Juan', 'Marta', { children: 'pepe' } ]}
 
-
 // Merge
 // Implementa una función merge que, dados dos objetos de entrada source y target, devuelva un nuevo objeto con todas las propiedades de target y de source, y en caso de propiedades con el mismo nombre, source sobreescribe a target.
-
 // Por ejemplo, dados estos 2 objetos:
 const a = { name: 'Maria', surname: 'Ibañez', country: 'SPA' }; 
 const b = { name: 'Luisa', age: 31, married: true };
 
+interface Person {
+   name: string;
+   surname?: string;
+   country?: string;
+   age?: number;
+   married?: boolean;
+}
+
 //TIP: Puedes usar la función "clone" del apartado A.
-function merge <T>(source: T[], target: T[]): T[] {
-   // Implementation here.
+function merge (source: Person, target: Person): Person {
    return {...target, ...source}
 }
 
@@ -156,14 +158,14 @@ class SlothMachine  {
 }
 // Ejemplo de uso
 const machine1 = new SlothMachine();
-console.log('Machine1',machine1.play()); // "Good luck next time!!"
+machine1.play(); // "Good luck next time!!"
 const machine2 = new SlothMachine();
-console.log('Machine2',machine2.play()); // "Good luck next time!!"
+machine2.play(); // "Good luck next time!!"
 const machine3 = new SlothMachine();
-console.log('Machine3',machine3.play()); // "Congratulations!!!. You won 3 coins!!"
+machine3.play(); // "Congratulations!!!. You won 3 coins!!"
 const machine4 = new SlothMachine();
-console.log('Machine4',machine4.play()); // "Good luck next time!!"
+machine4.play(); // "Good luck next time!!"
 const machine5 = new SlothMachine();
-console.log('Machine5',machine5.play()); // "Congratulations!!!. You won 2 coins!!"
+machine5.play(); // "Congratulations!!!. You won 2 coins!!"
 
 
