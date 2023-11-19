@@ -148,7 +148,6 @@ class SlothMachine  {
       const random3 = Math.random() >= 0.5;
 
       if (random1 && random2 && random3) {
-         console.log(random1, random2, random3)
          console.log(`Congratulations!!!. You won ${this.coins} coins!!`);
          this.coins = 0;
       } else {
@@ -159,13 +158,9 @@ class SlothMachine  {
 // Ejemplo de uso
 const machine1 = new SlothMachine();
 machine1.play(); // "Good luck next time!!"
-const machine2 = new SlothMachine();
-machine2.play(); // "Good luck next time!!"
-const machine3 = new SlothMachine();
-machine3.play(); // "Congratulations!!!. You won 3 coins!!"
-const machine4 = new SlothMachine();
-machine4.play(); // "Good luck next time!!"
-const machine5 = new SlothMachine();
-machine5.play(); // "Congratulations!!!. You won 2 coins!!"
+machine1.play(); // "Good luck next time!!"
+machine1.play(); // "Congratulations!!!. You won 3 coins!!"
+machine1.play(); // "Good luck next time!!"
+machine1.play(); // "Congratulations!!!. You won 2 coins!!"
 
 
