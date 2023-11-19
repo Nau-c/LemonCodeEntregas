@@ -5,9 +5,9 @@ body {
 
 nav {
   display: flex;
-    flex-direction: column;
-    background-color: rgb(21, 94, 19);
-    color: hsl(0, 0%, 0%);
+  flex-direction: column;
+  background-color: rgb(21, 94, 19);
+  color: hsl(0, 0%, 0%);
 }
 
 .toolbar {
@@ -28,17 +28,15 @@ nav {
 
 .page-container {
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
 .menu-container {
-  /* height: 100%;
+  top: 0;
   background-color: rgb(21, 94, 19);
   color: hsl(0, 0%, 0%);
-  position: sticky; */
   position: sticky;
-  top: 0;
 }
 
 .menu-title {
@@ -70,7 +68,7 @@ li {
   padding: 10px;
   background-color: hwb(30 76% 22%);
   border: 1px solid black;
-  width: 97.5%;
+  width: 98.7%;
   height: 100%;
   flex-wrap: wrap;
 }
@@ -88,12 +86,14 @@ li {
   padding: 5px 25px;
   background-color: rgb(253, 253, 253);
   border: 1px solid black;
-  width: 200px;
-  height: 160px;
+  width: 300px;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
 }
 
 .card > img {
-  width: 70%;
+  width: 40%;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
@@ -117,21 +117,20 @@ footer {
 @media (max-width: 768px) {
   body {
     margin: 0;
+    width: 100%;
   }
-  
-  main {
-    width: 0;
+  header {
+    position: sticky;
+    top: 0;
   }
-
   nav {
-    width: 100vw;
-    position: fixed;
+    width: 100%;
+    position: sticky;
+    top: 30px;
   }
-
   .toolbar {
     display: none;
   }
-
   .page-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -140,29 +139,25 @@ footer {
     padding: 4px;
     width: 100vw;
   }
-
   .page-container {
     display: flex;
     flex-direction: column;
-    height: 97vh;
+    height: 100;
+    width: 100%;
   }
-
   .menu-container {
-    width: 102vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     background-color: rgb(21, 94, 19);
     color: hsl(0, 0%, 0%);
-    align-items: center;
-    position: sticky;
+    padding-right: 8px;
   }
-
   .menu-title {
     visibility: hidden;
     width: 0;
     height: 0;
   }
-
   ul {
     list-style: none;
     padding: 0;
@@ -172,7 +167,6 @@ footer {
     justify-content: space-around;
     margin-top: 10px;
   }
-
   li {
     background-color: hsl(28, 60%, 82%);
     border: 1px solid black;
@@ -183,28 +177,19 @@ footer {
     align-items: center;
     justify-content: center;
   }
-
   .list {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 0;
+    padding-bottom: 15px;
+    padding-right: 10px;
     background-color: hwb(30 76% 22%);
     border: 1px solid black;
-    width: 96.5vw;
-    height: auto;
-    margin-top: 40px;
   }
-
-  .list::-webkit-scrollbar {
-    width: 5px;
-    background-color: hsl(108, 34%, 48%);
-    justify-items: center;
-  }
-
   .item {
     display: flex;
     flex-direction: row;
-    margin: 15px;
+    margin: 10px;
     align-items: center;
     padding: 5px 25px;
     background-color: rgb(253, 253, 253);
@@ -223,8 +208,10 @@ footer {
     height: 90px;
   }
   footer {
-    width: 100vw;
+    width: 100%;
     background-color: hsl(28, 60%, 82%);
+    margin-left: 0;
   }
 }
 
+/*# sourceMappingURL=styles.css.map */

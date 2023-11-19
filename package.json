@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/Nau-c/LemonCodeEntregas/issues"
   },
-  "homepage": "https://github.com/Nau-c/LemonCodeEntregas#readme"
+  "homepage": "https://github.com/Nau-c/LemonCodeEntregas#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
