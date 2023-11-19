@@ -127,8 +127,8 @@ var SlothMachine = /** @class */ (function () {
         var random1 = Math.random() >= 0.5;
         var random2 = Math.random() >= 0.5;
         var random3 = Math.random() >= 0.5;
+        console.log(this.coins);
         if (random1 && random2 && random3) {
-            console.log(random1, random2, random3);
             console.log("Congratulations!!!. You won ".concat(this.coins, " coins!!"));
             this.coins = 0;
         }
@@ -141,11 +141,7 @@ var SlothMachine = /** @class */ (function () {
 // Ejemplo de uso
 var machine1 = new SlothMachine();
 machine1.play(); // "Good luck next time!!"
-var machine2 = new SlothMachine();
-machine2.play(); // "Good luck next time!!"
-var machine3 = new SlothMachine();
-machine3.play(); // "Congratulations!!!. You won 3 coins!!"
-var machine4 = new SlothMachine();
-machine4.play(); // "Good luck next time!!"
-var machine5 = new SlothMachine();
-machine5.play(); // "Congratulations!!!. You won 2 coins!!"
+machine1.play(); // "Good luck next time!!"
+machine1.play(); // "Congratulations!!!. You won 3 coins!!"
+machine1.play(); // "Good luck next time!!"
+machine1.play(); // "Congratulations!!!. You won 2 coins!!"

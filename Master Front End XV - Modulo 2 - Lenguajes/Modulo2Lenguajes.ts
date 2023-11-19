@@ -147,6 +147,7 @@ class SlothMachine  {
       const random2 = Math.random() >= 0.5;
       const random3 = Math.random() >= 0.5;
 
+      console.log(this.coins);
       if (random1 && random2 && random3) {
          console.log(`Congratulations!!!. You won ${this.coins} coins!!`);
          this.coins = 0;
