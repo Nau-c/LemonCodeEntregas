@@ -82,49 +82,4 @@ header {
   margin: 0;
 }
 
-@media (min-width: 768px) {
-  #top-text::before {
-    content: "5";
-    font-weight: bold;
-  }
-  body {
-    width: 100%;
-  }
-  .top,
-  .first,
-  .second {
-    flex-wrap: wrap;
-    margin: 0;
-    justify-content: start;
-  }
-  header {
-    justify-content: space-between;
-    width: 85%;
-    position: sticky;
-  }
-  header img:hover {
-    width: 100px;
-    transition: width 0.5s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 100px;
-  }
-  .top-item {
-    min-width: 225px;
-    width: 447px;
-    display: none;
-  }
-  .top-item img {
-    width: 300px;
-  }
-  .top-item:nth-child(-n+3) {
-    display: block;
-  }
-  .item {
-    min-width: 250px;
-  }
-  .item img {
-    width: 310px;
-  }
-}
-
 /*# sourceMappingURL=styles.css.map */

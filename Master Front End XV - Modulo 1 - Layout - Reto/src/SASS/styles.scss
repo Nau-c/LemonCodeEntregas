@@ -96,72 +96,82 @@ margin-left: 7px;
   margin: 0;
 }
 
-@media (min-width: 768px) {
-  #top-text::before {
-    content: "5";
-    font-weight: bold;
-   
-  }
-
-  body {
-    width: 100%;
-  }
-  
-  .top,
-  .first,
-  .second {
-    flex-wrap: wrap;
-    margin: 0;
-    justify-content: start;
-  }
-
-  header {
-    justify-content: space-between;
-    width: 85%;
-    position: sticky;
-
-
-   img:hover {
-     width: 100px;
-     transition: width 0.5s;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-     width: 100px;
-    //necesito un hover que cuando pase el rato la imagen crezca
-    
-   }
-
-  }
-
-  .top-item {
-    min-width: 225px;
-    width: 447px;
-    display: none;
-
-    img {
-      width: 300px;
-    }
-  }
-
-  .top-item:nth-child(-n + 3) {
-    display: block;
-  }
-
-  .item {
-    min-width: 250px;
-
-    img {
-      width: 310px;
-    }
-   
-  }
-}
-
-// @media only screen and (min-width: 1024px) and (max-width: 1366px)  {
+// @media (min-width: 728px) {
 //   #top-text::before {
 //     content: "3";
 //     font-weight: bold;
+//   }
+
+//   .top-item:nth-child(n + 4) {
+//     display: none;
+//     margin: 0;
+//   }
+  
+
+//   body {
+//     width: 100%;
+//   }
+  
+//   .top,
+//   .first,
+//   .second {
+//     flex-wrap: wrap;
+//     margin: 0;
+//     justify-content: start;
+//   }
+
+//   header {
+//     justify-content: space-between;
+//     width: 85%;
+//     position: sticky;
+
+
+//    img:hover {
+//      width: 100px;
+//      transition: width 0.5s;
+//      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+//      width: 100px;
+//     //necesito un hover que cuando pase el rato la imagen crezca
+    
+//    }
+
+//   }
+
+//   .top-item {
+//     min-width: 225px;
+//     width: 447px;
+//     display: none;
+
+//     img {
+//       width: 300px;
+//     }
+//   }
+
+//   .top-item:nth-child(-n + 3) {
+//     display: block;
+//   }
+
+//   .item {
+//     min-width: 250px;
+
+//     img {
+//       width: 310px;
+//     }
    
 //   }
+// }
+
+// @media (min-width: 1024px) {
+//   #top-text::before {
+//     content: "5";
+//     font-weight: bold;
+//   }
+
+//   .top-item:nth-child(n + 6) {
+//     display: none;
+//     margin: 0;
+//   }
+  
 
 //   body {
 //     width: 100%;
