@@ -23,8 +23,16 @@
     "url": "https://github.com/Nau-c/LemonCodeEntregas/issues"
   },
   "homepage": "https://github.com/Nau-c/LemonCodeEntregas#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "@babel/preset-react": "^7.23.3",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.3.3"
   }
 }
