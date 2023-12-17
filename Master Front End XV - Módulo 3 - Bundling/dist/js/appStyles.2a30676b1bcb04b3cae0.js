@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[977],{539:(e,s,d)=>{d.d(s,{Z:()=>r});const r={"red-background":"mystyles__red-background--wMexY",redBackground:"mystyles__red-background--wMexY"}}},e=>{e(e.s=539)}]);
