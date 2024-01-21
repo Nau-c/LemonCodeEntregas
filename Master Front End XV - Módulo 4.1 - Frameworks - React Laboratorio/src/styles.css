@@ -1,10 +1,25 @@
-.list-user-list-container {
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.container {
+    margin: 10px;
     display: grid;
-    grid-template-columns: 80px 1fr 3fr;
-    grid-template-rows: 20px;
-    grid-auto-rows: 80px;
-    grid-gap: 10px 5px;
+    grid-template-columns: 180px 130px 50px;
+    grid-template-rows: 40px;
+    font-size: 25px;
+    font-weight: 800;
 }
+
+.list-user-list-container {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 180px 130px 50px;
+    grid-template-rows: 170px;
+    font-size: 20px;
+
+}
+
 
 .list-header {
     background-color: #2f4858;
@@ -13,5 +28,6 @@
 }
 
 .list-user-list-container>img {
-    width: 80px;
+    width: 150px;
+    height: 150px;
 }
