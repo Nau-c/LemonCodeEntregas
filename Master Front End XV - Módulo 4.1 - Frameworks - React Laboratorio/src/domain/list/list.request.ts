@@ -22,7 +22,7 @@ export const getStatusMembers = async (): Promise<
       error: response.error,
     };
 
-    console.log(data);
+    console.log("DataCruda", data);
 
     return objectResponse;
   } catch (error) {

@@ -23,4 +23,11 @@ export interface UserLemonCoders {
   subscriptions_url: string;
   type: string;
   url: string;
+  organization: string;
+}
+
+export interface FilterByNameImputProps {
+  filterText: string;
+  organizations_url: string;
+  defaultFilterText: string;
 }
