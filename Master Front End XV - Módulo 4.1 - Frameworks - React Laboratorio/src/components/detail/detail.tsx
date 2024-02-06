@@ -22,14 +22,13 @@ export const DetailPage: React.FC = () => {
         createDefaultMemberDetail()
     );
     const { id } = useParams();
-    console.log(id)
 
     React.useEffect(() => {
+        console.log("id", id);
         fetch(`https://api.github.com/users/${id}`)
             .then((response) => response.json())
             .then((json) => setMember(json));
-    }, []);
-    console.log(member);
+    }, [id]);
     return (
         <>
             <h2>Hello from Detail page</h2>

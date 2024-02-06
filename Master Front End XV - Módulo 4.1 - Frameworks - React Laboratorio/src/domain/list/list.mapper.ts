@@ -1,9 +1,7 @@
 import { UserLemonCoders } from "./list.interface";
 
 export const mapAssetProps = (data: any) => {
-  console.log("Maperitem", data);
   return data?.map((item: any) => {
-    console.log("Maperitem", item);
     return {
       avatar_url: item.avatar_url,
       events_url: item.events_url,

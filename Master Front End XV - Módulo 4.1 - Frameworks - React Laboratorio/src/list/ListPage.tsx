@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { getStatusMembers } from "../../domain/list/list.request";
-import { mapAssetProps } from "../../domain/list/list.mapper";
-import { MembersList } from "../MemberList";
-import { FilterOrganization } from "../common/filterText";
+import { getStatusMembers } from "../domain/list/list.request";
+import { mapAssetProps } from "../domain/list/list.mapper";
+import { MembersList } from "../components/MemberList";
+import { FilterOrganization } from "../components/common/filterText";
 
 export const ListPage = () => {
     const [membersLemoncode, setMembersLemoncode] = React.useState([]);
@@ -32,7 +32,6 @@ export const ListPage = () => {
     return (
         <div>
             < FilterOrganization membersLemoncode={membersLemoncode} />
-            {/* <MembersList member={membersLemoncode} /> */}
         </div>
 
     )

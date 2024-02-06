@@ -8,8 +8,7 @@ interface MembersListProps {
     members: UserLemonCoders[];
     organization: string;
 }
-export const MembersList: React.FC<MembersListProps> = ({ members, organization }) => {
-    console.log('members', members)
+export const MembersList = ({ members, organization }: MembersListProps) => {
     return (
         <>
 
@@ -21,6 +20,7 @@ export const MembersList: React.FC<MembersListProps> = ({ members, organization 
                 <span className="">Avatar </span>
                 <span className="">Id: </span>
                 <span className="">Name:</span>
+                <span>Navigate to detail page</span>
             </div>
 
             {members?.map((member) => {
