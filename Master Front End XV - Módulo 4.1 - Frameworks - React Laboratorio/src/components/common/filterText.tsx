@@ -12,6 +12,9 @@ export interface ObjectResponse<T> {
 export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: UserLemonCoders[] }) => {
     const [organization, setOrganization] = useState('lemoncode');
     const [users, setUsers] = useState<MembersLemoncode[]>([]);
+    const [currentPage, setCurrentPage] = useState(1); // Página actual
+    const [perPage, setPerPage] = useState(5);
+
 
     useEffect(() => { setUsers(membersLemoncode) }, [membersLemoncode]);
 
@@ -49,6 +52,10 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
 
     }
 
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+        handleFiltered(organization, page);
+    }
 
 
     console.log('users', users)
@@ -60,9 +67,17 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
                 onChange={(e) => handleInput(e)}
                 placeholder={organization}
             />
+
             <button onClick={() => handleFiltered(organization)}>Search</button>
 
             <MembersList members={users} organization={organization} />
+            {/* Paginación */}
+            <div>
+                <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous Page</button>
+                <span> Page {currentPage} </span>
+                <button onClick={() => handlePageChange(currentPage + 1)}>Next Page</button>
+            </div>
+
         </div>
     );
 

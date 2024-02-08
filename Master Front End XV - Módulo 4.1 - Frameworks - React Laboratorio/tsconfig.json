@@ -15,12 +15,12 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next",
-      },
+        "name": "next"
+      }
     ],
     "paths": {
-      "@/*": ["./*"],
-    },
+      "@/*": ["./*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -30,7 +30,7 @@
     "app/lib/placeholder-data.js",
     "scripts/seed.js",
     "src/views/components/fleets/common/MapLocation.jsx",
-    "src/views/components/fleets/common/MapLocation.jsx",
+    "src/views/components/fleets/common/MapLocation.jsx"
   ],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }
