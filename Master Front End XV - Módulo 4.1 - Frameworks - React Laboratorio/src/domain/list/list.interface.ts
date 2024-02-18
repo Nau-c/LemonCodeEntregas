@@ -23,7 +23,9 @@ export interface UserLemonCoders {
   subscriptions_url: string;
   type: string;
   url: string;
+  members: UserLemonCoders[];
   organization: string;
+  users: UserLemonCoders[];
 }
 
 export interface FilterByNameImputProps {

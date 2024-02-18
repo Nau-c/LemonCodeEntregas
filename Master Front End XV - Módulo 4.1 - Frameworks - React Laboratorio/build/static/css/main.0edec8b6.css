@@ -1,0 +1,2 @@
+@tailwind base;@tailwind components;@tailwind utilities;.container{font-size:25px;font-weight:800;grid-template-rows:40px}.container,.list-user-list-container{display:grid;grid-template-columns:180px 130px 50px;margin:10px}.list-user-list-container{font-size:20px;grid-template-rows:170px}.list-header{background-color:#2f4858;color:#fff;font-weight:700}.list-user-list-container>img{height:150px;width:150px}
+/*# sourceMappingURL=main.0edec8b6.css.map*/

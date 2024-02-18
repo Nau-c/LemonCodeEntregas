@@ -5,7 +5,7 @@
 .container {
     margin: 10px;
     display: grid;
-    grid-template-columns: 180px 130px 50px;
+    grid-template-columns: 180px 130px 50px 100px;
     grid-template-rows: 40px;
     font-size: 25px;
     font-weight: 800;
@@ -14,7 +14,7 @@
 .list-user-list-container {
     margin: 10px;
     display: grid;
-    grid-template-columns: 180px 130px 50px;
+    grid-template-columns: 180px 130px 50px 100px;
     grid-template-rows: 170px;
     font-size: 20px;
 

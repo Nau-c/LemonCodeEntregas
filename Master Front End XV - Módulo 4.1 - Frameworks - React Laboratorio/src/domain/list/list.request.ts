@@ -22,8 +22,6 @@ export const getStatusMembers = async (): Promise<
       error: response.error,
     };
 
-    console.log("DataCruda", data);
-
     return objectResponse;
   } catch (error) {
     throw error;
