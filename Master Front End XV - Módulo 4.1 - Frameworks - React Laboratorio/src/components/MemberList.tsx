@@ -15,12 +15,11 @@ export const MembersList = ({ members, organization }: MembersListProps) => {
             <div>
                 <h2>Organization: {organization}</h2>
             </div>
-            <div className="container">
+            <div className="container grid grid-cols-180 130 50 100 grid-rows-40 font-bold text-5xl">
 
                 <span className="">Avatar </span>
                 <span className="">Id: </span>
                 <span className="">Name:</span>
-                <span>Navigate to detail page</span>
             </div>
 
             {members?.map((member) => {

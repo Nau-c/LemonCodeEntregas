@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { MembersLemoncode, UserLemonCoders } from "@/src/domain/list/list.interface";
 import { MembersList } from "../MemberList";
+import { useParams } from "react-router-dom";
 
 export interface ObjectResponse<T> {
     content: MembersLemoncode[];
@@ -9,14 +10,21 @@ export interface ObjectResponse<T> {
 }
 
 export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: UserLemonCoders[] }) => {
+    const { organization: urlOrganization } = useParams<{ organization: string }>();
+
     const [organization, setOrganization] = useState('lemoncode');
     const [users, setUsers] = useState<MembersLemoncode[]>([]);
     const [perPage, setPerPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(users.length / perPage);
-    const totalPage = useMemo(() => Math.ceil(users.length / perPage), [users, perPage]);
+    const [totalPages, setTotalPages] = useState(0);
+    const totalPage = Math.ceil(users.length / perPage);
 
-    useEffect(() => { setUsers(membersLemoncode) }, [membersLemoncode]);
+    const countPages = () => {
+        const test = Math.ceil(users.length / perPage);
+        setTotalPages(test);
+
+    }
+
 
     const handleFiltered = (organization = 'lemoncode', page = 1) => {
         fetch(`https://api.github.com/orgs/${organization}/members?page=${page}&per_page=${perPage}`)
@@ -31,20 +39,24 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
                 setTotalPages(totalPage);
                 if (result.length === 0) {
                     alert('No members found for the organization.');
+                } else {
+                    localStorage.setItem("lastOrganization", organization);
                 }
             })
             .catch((error) => {
+                console.log(error);
+
                 setUsers([]);
                 setTotalPages(0);
                 alert('Organization not found or API request failed.');
                 console.error(error);
             });
-
-
     }
 
+
+
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let value = e.target.value;
+        const value = e.target.value;
         if (value === '') {
             setOrganization('lemoncode');
         } else {
@@ -57,30 +69,35 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
         handleFiltered(organization, page);
     }
 
+    useEffect(() => {
+        const test = localStorage.getItem("lastOrganization");
+        if (test) {
+            setOrganization(test);
+            handleFiltered(organization);
+            countPages();
+        }
+        setUsers(membersLemoncode);
+
+    }, [membersLemoncode]);
+
+
 
     return (
-        <div className="focus:border-blue-300">
-            <h1>Organization Members</h1>
+        <div className="bg-red-200">
             <input
                 type="text"
                 onChange={(e) => handleInput(e)}
                 placeholder={organization}
-                className="border rounded-md px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
             />
-            {/* Paginación */}
             <div>
                 <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous Page</button>
-                <span> Page {currentPage} of {totalPages} </span>
+                <span> Page {currentPage} of {totalPage} </span>
                 <button onClick={() => handlePageChange(currentPage + 1)}>Next Page</button>
             </div>
             <button onClick={() => handleFiltered(organization)}>Search</button>
-
             <MembersList members={users} organization={organization} />
 
 
         </div>
     );
-
-
 }
-

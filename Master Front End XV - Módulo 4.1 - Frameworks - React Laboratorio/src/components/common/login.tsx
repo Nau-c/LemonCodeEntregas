@@ -14,35 +14,33 @@ export const LoginPage = () => {
     if (username === "admin" && password === "admin") {
         navigate("/list");
     }
-    // } else if (username !== "" && password !== "") {
-    //     alert("Invalid credentials");
-
-    // };
 
     return (
         <>
-            <form onSubmit={handleNavigation}>
-                <h2>Hello from login page</h2>
+            <form onSubmit={handleNavigation} className="bg-blue-500 p-8 rounded-lg max-w-md mx-auto mt-10">
+                <h2 className="text-white text-2xl mb-6">Hello from login page</h2>
 
-                <div>
-                    <div>
+                <div className="mb-4">
+                    <div className="text-white block mb-2">
                         <label>Username: </label>
                         <input
+                            className="w-full px-3 py-2 border rounded"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <label>Password: </label>
+                    <div className="mb-6">
+                        <label className="text-white block mb-2">Password: </label>
                         <input
                             type="password"
+                            className="w-full px-3 py-2 border rounded"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                 </div>
 
-                <button type="submit">Login</button>
+                <button type="submit" className="bg-white text-blue-500 px-4 py-2 rounded-full">Login</button>
             </form>
         </>
     )
