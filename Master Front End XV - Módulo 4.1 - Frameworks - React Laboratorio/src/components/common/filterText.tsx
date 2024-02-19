@@ -83,21 +83,22 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
 
 
     return (
-        <div className="bg-red-200">
-            <input
-                type="text"
-                onChange={(e) => handleInput(e)}
-                placeholder={organization}
-            />
-            <div>
-                <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous Page</button>
-                <span> Page {currentPage} of {totalPage} </span>
-                <button onClick={() => handlePageChange(currentPage + 1)}>Next Page</button>
+        <div className="bg-gray-100 p8">
+            <div className="flex mb-4 mt-4">
+                <input
+                    type="text"
+                    onChange={(e) => handleInput(e)}
+                    placeholder={organization}
+                    className="w-full p-2 mb-4 border rounded mr-2 ml-2"
+                />
+                <button onClick={() => handleFiltered(organization)} className="bg-green-500 text-white px-4 py-2 rounded mb-4 mr-2">Search</button>
             </div>
-            <button onClick={() => handleFiltered(organization)}>Search</button>
+            <div className="flex items-center justify-between mb-4">
+                <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className="bg-blue-500 text-white px-4 py-2 rounded mr-2 ml-2">Previous Page</button>
+                <span className="text-lg font-bold"> Page {currentPage} of {totalPage} </span>
+                <button onClick={() => handlePageChange(currentPage + 1)} className="bg-blue-500 text-white px-4 py-2 rounded ml-2 mr-2">Next Page</button>
+            </div>
             <MembersList members={users} organization={organization} />
-
-
-        </div>
+        </div >
     );
 }

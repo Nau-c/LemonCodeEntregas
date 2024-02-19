@@ -10,14 +10,13 @@ interface MembersListProps {
 }
 export const MembersList = ({ members, organization }: MembersListProps) => {
     return (
-        <>
+        <div className="flex justify-center flex-col w-full bg-teal-300 items-center p-8">
 
-            <div>
+            <div className="">
                 <h2>Organization: {organization}</h2>
             </div>
-            <div className="container grid grid-cols-180 130 50 100 grid-rows-40 font-bold text-5xl">
-
-                <span className="">Avatar </span>
+            <div className="flex font-bold text-2xl items-center gap-20">
+                <span className="pr-8">Avatar </span>
                 <span className="">Id: </span>
                 <span className="">Name:</span>
             </div>
@@ -27,7 +26,7 @@ export const MembersList = ({ members, organization }: MembersListProps) => {
             })}
             <Link to="/detail">Navigate to detail page</Link>
 
-        </>
+        </div>
     );
 
 };
