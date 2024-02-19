@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { MembersLemoncode, UserLemonCoders } from "@/src/domain/list/list.interface";
 import { MembersList } from "../MemberList";
 import { useParams } from "react-router-dom";
+import { log } from "console";
 
 export interface ObjectResponse<T> {
     content: MembersLemoncode[];
@@ -10,20 +11,23 @@ export interface ObjectResponse<T> {
 }
 
 export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: UserLemonCoders[] }) => {
-    const { organization: urlOrganization } = useParams<{ organization: string }>();
+    // const { organization: urlOrganization } = useParams<{ organization: string }>();
 
     const [organization, setOrganization] = useState('lemoncode');
     const [users, setUsers] = useState<MembersLemoncode[]>([]);
     const [perPage, setPerPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0);
-    const totalPage = Math.ceil(users.length / perPage);
+    //const [totalPages, setTotalPages] = useState(Math.ceil(users.length / 5));
+    //console.log('totalPages', totalPages);
+    // const totalPage = Math.ceil(users.length / perPage);
 
-    const countPages = () => {
-        const test = Math.ceil(users.length / perPage);
-        setTotalPages(test);
+    // const countPages = useMemo(() => {
+    //     return Math.ceil(users.length / perPage);
 
-    }
+    //     // const test = Math.ceil(users.length / perPage);
+    //     // setTotalPages(test);
+    // }, [users, perPage]);
+
 
 
     const handleFiltered = (organization = 'lemoncode', page = 1) => {
@@ -36,7 +40,7 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
             })
             .then((result) => {
                 setUsers(result);
-                setTotalPages(totalPage);
+                //setTotalPages(totalPage);
                 if (result.length === 0) {
                     alert('No members found for the organization.');
                 } else {
@@ -45,15 +49,12 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
             })
             .catch((error) => {
                 console.log(error);
-
                 setUsers([]);
-                setTotalPages(0);
+                //setTotalPages(0);
                 alert('Organization not found or API request failed.');
                 console.error(error);
             });
     }
-
-
 
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
@@ -74,14 +75,16 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
         if (test) {
             setOrganization(test);
             handleFiltered(organization);
-            countPages();
         }
         setUsers(membersLemoncode);
-
     }, [membersLemoncode]);
 
+    //let totalPages = Math.ceil(users.length / perPage);
+    const totalPages = () => {
+        return Math.ceil(users.length / perPage);
+    }
 
-
+    console.log('totalPages', totalPages);
     return (
         <div className="bg-gray-100 p8">
             <div className="flex mb-4 mt-4">
@@ -95,7 +98,7 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
             </div>
             <div className="flex items-center justify-between mb-4">
                 <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className="bg-blue-500 text-white px-4 py-2 rounded mr-2 ml-2">Previous Page</button>
-                <span className="text-lg font-bold"> Page {currentPage} of {totalPage} </span>
+                <span className="text-lg font-bold"> Page {currentPage} of {totalPages()} </span>
                 <button onClick={() => handlePageChange(currentPage + 1)} className="bg-blue-500 text-white px-4 py-2 rounded ml-2 mr-2">Next Page</button>
             </div>
             <MembersList members={users} organization={organization} />
