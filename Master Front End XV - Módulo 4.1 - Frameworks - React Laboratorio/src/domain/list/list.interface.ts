@@ -3,7 +3,6 @@ export interface MembersLemoncode {
   login: string;
   avatar_url: string;
 }
-
 export interface UserLemonCoders {
   avatar_url: string;
   events_url: string;
@@ -27,7 +26,6 @@ export interface UserLemonCoders {
   organization: string;
   users: UserLemonCoders[];
 }
-
 export interface FilterByNameImputProps {
   filterText: string;
   organizations_url: string;

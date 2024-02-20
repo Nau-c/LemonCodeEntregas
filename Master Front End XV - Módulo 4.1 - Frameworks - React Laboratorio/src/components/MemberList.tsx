@@ -1,9 +1,6 @@
 import React from "react";
 import { UserLemonCoders } from "../domain/list/list.interface";
 import { MemberItem } from "./MemberItem";
-import { Link } from "react-router-dom";
-
-
 interface MembersListProps {
     members: UserLemonCoders[];
     organization: string;
@@ -25,7 +22,6 @@ export const MembersList = ({ members, organization }: MembersListProps) => {
             {members?.map((member) => {
                 return <MemberItem key={member.id} member={member} />
             })}
-            <Link to="/detail" className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">Navigate to detail page</Link>
 
         </div>
     );
