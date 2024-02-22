@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Nau-c/LemonCodeEntregas#readme",
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.4",
     "autoprefixer": "^10.4.17",
