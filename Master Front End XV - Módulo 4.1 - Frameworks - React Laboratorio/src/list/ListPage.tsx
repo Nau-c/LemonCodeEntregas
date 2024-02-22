@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { getStatusMembers } from "../domain/list/list.request";
 import { mapAssetProps } from "../domain/list/list.mapper";
-import { MembersList } from "../components/MemberList";
 import { FilterOrganization } from "../components/common/filterText";
 
 export const ListPage = () => {
     const [membersLemoncode, setMembersLemoncode] = React.useState([]);
     const [error, setError] = useState('')
-
 
     const getData = async () => {
         try {

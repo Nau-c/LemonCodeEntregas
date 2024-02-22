@@ -1,34 +1,19 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MembersLemoncode, UserLemonCoders } from "@/src/domain/list/list.interface";
 import { MembersList } from "../MemberList";
-import { useParams } from "react-router-dom";
-import { log } from "console";
 
-export interface ObjectResponse<T> {
+
+export interface ObjectResponse<t> {
     content: MembersLemoncode[];
     status: number;
     error?: string;
 }
 
 export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: UserLemonCoders[] }) => {
-    // const { organization: urlOrganization } = useParams<{ organization: string }>();
-
     const [organization, setOrganization] = useState('lemoncode');
     const [users, setUsers] = useState<MembersLemoncode[]>([]);
     const [perPage, setPerPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(1);
-    //const [totalPages, setTotalPages] = useState(Math.ceil(users.length / 5));
-    //console.log('totalPages', totalPages);
-    // const totalPage = Math.ceil(users.length / perPage);
-
-    // const countPages = useMemo(() => {
-    //     return Math.ceil(users.length / perPage);
-
-    //     // const test = Math.ceil(users.length / perPage);
-    //     // setTotalPages(test);
-    // }, [users, perPage]);
-
-
 
     const handleFiltered = (organization = 'lemoncode', page = 1) => {
         fetch(`https://api.github.com/orgs/${organization}/members?page=${page}&per_page=${perPage}`)
@@ -39,8 +24,14 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
                 return response.json();
             })
             .then((result) => {
+                console.log('result', result.content);
                 setUsers(result);
-                //setTotalPages(totalPage);
+                let totalPages = 0;
+                if (users.length > 0) {
+                    totalPages = Math.ceil(users.length / perPage);
+                }
+                console.log('totalPages', totalPages);
+
                 if (result.length === 0) {
                     alert('No members found for the organization.');
                 } else {
@@ -50,7 +41,6 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
             .catch((error) => {
                 console.log(error);
                 setUsers([]);
-                //setTotalPages(0);
                 alert('Organization not found or API request failed.');
                 console.error(error);
             });
@@ -71,20 +61,22 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
     }
 
     useEffect(() => {
-        const test = localStorage.getItem("lastOrganization");
-        if (test) {
-            setOrganization(test);
+        const delayDebounceFn = setTimeout(() => {
+            handleFiltered(organization);
+        }, 500);
+
+        return () => clearTimeout(delayDebounceFn);
+    }, [organization]);
+
+    useEffect(() => {
+        const changeOrganization = localStorage.getItem("lastOrganization");
+        if (changeOrganization) {
+            setOrganization(changeOrganization);
             handleFiltered(organization);
         }
         setUsers(membersLemoncode);
     }, [membersLemoncode]);
 
-    //let totalPages = Math.ceil(users.length / perPage);
-    const totalPages = () => {
-        return Math.ceil(users.length / perPage);
-    }
-
-    console.log('totalPages', totalPages);
     return (
         <div className="bg-gray-100 p8">
             <div className="flex mb-4 mt-4">
@@ -98,7 +90,7 @@ export const FilterOrganization = ({ membersLemoncode }: { membersLemoncode: Use
             </div>
             <div className="flex items-center justify-between mb-4">
                 <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className="bg-blue-500 text-white px-4 py-2 rounded mr-2 ml-2">Previous Page</button>
-                <span className="text-lg font-bold"> Page {currentPage} of {totalPages()} </span>
+                <span className="text-lg font-bold"> Page {currentPage} </span>
                 <button onClick={() => handlePageChange(currentPage + 1)} className="bg-blue-500 text-white px-4 py-2 rounded ml-2 mr-2">Next Page</button>
             </div>
             <MembersList members={users} organization={organization} />
