@@ -1,7 +1,7 @@
 <template>
-    <ul>
-      <li v-for="(task, index) in tasks" :key="index" class="flex items-center justify-between border-b p-2">
-        <div class="flex items-center">
+    <ul v-if="tasks.length > 0" class="divide-y">
+      <li v-for="(task, index) in tasks" :key="index" class="flex flex-col md:flex-row items-center justify-between p-2">
+        <div class="flex items-center mb-2 md:mb-0">
           <span v-if="task.completed" class="mr-2">
             <Icon name="🚀" />
           </span>
@@ -15,8 +15,9 @@
             Eliminar
           </button>
         </div>
-      </li>
-    </ul>
+    </li>
+</ul>
+<p v-else class="text-gray-500 mt-4">No hay tareas disponibles!.</p>
   </template>
   <script>
   export default {
@@ -36,3 +37,28 @@
   };
   </script>
   
+  <style scoped>
+  /* Puedes agregar estilos Tailwind adicionales según sea necesario */
+  .line-through {
+    text-decoration: line-through;
+  }
+  
+  /* Estilos para hacer la lista flexible en dispositivos móviles */
+  @media (max-width: 768px) {
+    .flex-col {
+      flex-direction: column;
+    }
+  
+    .md\:flex-row {
+      flex-direction: row;
+    }
+  
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+  
+    .md\:mb-0 {
+      margin-bottom: 0;
+    }
+  }
+  </style>
