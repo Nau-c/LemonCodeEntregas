@@ -5,11 +5,19 @@
         @keydown.enter="addTask"
         placeholder="Ingrese una nueva tarea..."
       />
-      <button @click="addTask">Agregar</button>
+      <button @click="addTask" class="ml-4 mt-4 border border-green-500 rounded p-2 hover:bg-green-500 hover:text-white transition-all duration-300 ease-in-out">Agregar</button>
     </div>
   </template>
   
   <script lang="ts">
+    defineProps<{}>();
+
+    defineOptions({
+      tasks: Array,
+    });
+
+    const newTask = ref("");
+
   export default {
     data() {
       return {
@@ -17,21 +25,17 @@
       };
     },
     methods: {
-  addTask() {
-    try {
-      if (this.newTask.trim() !== "") {
-        this.$store.task.addTask(this.newTask.trim());
-        this.newTask = "";
+    addTask() {
+      try {
+        const stateTaskStore = useStateTaskStore();
+        if (this.newTask.trim() !== "") {
+          stateTaskStore.addTask(this.newTask.trim());
+          this.newTask = "";
+        }
+      } catch (error) {
+        console.error("Error adding task:", error);
       }
-    } catch (error) {
-      console.error("Error adding task:", error);
-    }
+    },
   },
-},
-  };
-  </script>
-  
-  <style scoped>
-  /* Aquí puedes agregar estilos específicos para este componente */
-  </style>
-  
+};
+</script>
