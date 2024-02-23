@@ -10,13 +10,14 @@
   </template>
   
   <script lang="ts">
-    defineProps<{}>();
+  import { ref } from 'vue';
+/*     defineProps<{}>();
 
     defineOptions({
       tasks: Array,
     });
 
-    const newTask = ref("");
+    const newTask = ref(""); */
 
   export default {
     data() {
@@ -25,17 +26,15 @@
       };
     },
     methods: {
-    addTask() {
-      try {
-        const stateTaskStore = useStateTaskStore();
-        if (this.newTask.trim() !== "") {
-          stateTaskStore.addTask(this.newTask.trim());
-          this.newTask = "";
-        }
-      } catch (error) {
-        console.error("Error adding task:", error);
+
+
+      addTask() {
+        this.$emit('addTask', this.newTask);
+        this.resetNewTask();
+      },
+      resetNewTask() {
+        this.newTask = '';
       }
-    },
   },
 };
 </script>
