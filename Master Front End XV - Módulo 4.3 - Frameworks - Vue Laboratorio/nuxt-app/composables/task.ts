@@ -16,24 +16,28 @@ export const useStateTaskStore = defineStore({
             this.tasks.push(objectTask);
         },
         toggleTask(id: number) {
-            for (let i = 0; i < this.tasks.length; i++) {
-                if (this.tasks[i].id === id) {
-                    this.tasks[i].completed = !this.tasks[i].completed;
-                    break;
-                }
+            const foundIndex = this.tasks.findIndex((task) => task.id === id);
+            if (foundIndex !== -1) {
+                this.tasks[foundIndex].completed =
+                    !this.tasks[foundIndex].completed;
             }
         },
         removeTask(id: number) {
-            for (let i = 0; i < this.tasks.length; i++) {
-                if (this.tasks[i].id === id) {
-                    this.tasks.splice(i, 1);
-                    break;
-                }
+            const foundIndex = this.tasks.findIndex((task) => task.id === id);
+            if (foundIndex !== -1) {
+                this.tasks.splice(foundIndex, 1);
             }
         },
         getTasks() {
             return this.tasks;
         },
+        editTask(id: number, name: string) {
+            const foundIndex = this.tasks.findIndex((task) => task.id === id);
+            if (foundIndex !== -1) {
+                this.tasks[foundIndex].name = name;
+            }
+        },
     },
+    // Persist the store in localStorage
     persist: true,
 });

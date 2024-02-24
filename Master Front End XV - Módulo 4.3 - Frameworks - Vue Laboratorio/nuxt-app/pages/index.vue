@@ -1,32 +1,12 @@
 <template>
       <TaskInput @addTask="addTask"/>
-      <TaskList :tasks="tasks" @removeTask="removeTask" @toggleTask="toggleTask"/>
+      <TaskList :tasks="tasks" @removeTask="removeTask" @toggleTask="toggleTask" @editTask="editTask"/>
 </template>
   
 <script lang="ts">
 import { ref } from 'vue';
 import TaskInput from '@/components/TaskInput.vue';
 import TaskList from '@/components/TaskList.vue';
-// import { useStateTaskStore } from '@/store/todo';
-
-// const tasks = ref([]);
-
-// const addTask = (task: string) => {
-//   // Implementa la lógica para agregar una tarea
-//   tasks.value.push({ name: task, completed: false });
-// };
- 
-/* const addTask = (task: string) => {
-      try {
-        const stateTaskStore = useStateTaskStore();
-        if (this.newTask.trim() !== "") {
-          stateTaskStore.addTask(this.newTask.trim());
-          this.newTask = "";
-        }
-      } catch (error) {
-        console.error("Error adding task:", error);
-      }
-    } */
 
   export default {
     data() {
@@ -69,10 +49,17 @@ import TaskList from '@/components/TaskList.vue';
           } catch (error) {
           console.error("Error toggling task:", error);
         }
+    },
+    editTask (id: number, name: string){
+        try {
+            const stateTaskStore = useStateTaskStore();
+            stateTaskStore.editTask(id, name);
+            } catch (error) {
+            console.error("Error editing task:", error);
+        }
     }
     }
 }
-
 </script>
 
 

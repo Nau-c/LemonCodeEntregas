@@ -15,14 +15,15 @@
           <button @click="removeTask(task.id)" class="px-2 py-1 bg-red-500 text-white rounded">
             <Icon name="fxemoji:ballottboxwithscriptx" /> Eliminar
           </button>
+          <button @click="editTask(task.id, task.name)" class="px-2 py-1 bg-red-500 text-white rounded">
+            <Icon name="fxemoji:ballottboxwithscriptx" /> Editar
+          </button>
         </div>
     </li>
 </ul>
 <p v-else class="text-gray-500 mt-4">No hay tareas disponibles!.</p>
   </template>
   <script>
-  import { useStateTaskStore } from '#imports';
-
   export default {
     props: {
       tasks: Array, // Deberías pasar las tareas como prop desde la página principal
@@ -34,6 +35,9 @@
       removeTask(id) {
         this.$emit('remove-task', id);
       },
+      editTask(id, name) {
+        console.log("editTask", id, name);
+        this.$emit('edit-task', id, name);}
     },
   };
   </script>
