@@ -16,8 +16,6 @@ export const useStateTaskStore = defineStore({
             this.tasks.push(objectTask);
         },
         toggleTask(id: number) {
-            // Toggle the completion status of the task at the specified index
-            // Implement this based on your state structure
             for (let i = 0; i < this.tasks.length; i++) {
                 if (this.tasks[i].id === id) {
                     this.tasks[i].completed = !this.tasks[i].completed;
@@ -26,7 +24,6 @@ export const useStateTaskStore = defineStore({
             }
         },
         removeTask(id: number) {
-            // Remove the task at the specified index
             for (let i = 0; i < this.tasks.length; i++) {
                 if (this.tasks[i].id === id) {
                     this.tasks.splice(i, 1);
@@ -35,8 +32,8 @@ export const useStateTaskStore = defineStore({
             }
         },
         getTasks() {
-            // Fetch tasks from an API
             return this.tasks;
         },
     },
+    persist: true,
 });
