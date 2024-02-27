@@ -31,10 +31,10 @@ export const useStateTaskStore = defineStore({
         getTasks() {
             return this.tasks;
         },
-        editTask(id: number, name: string) {
+        editTask(id: number, task) {
             const foundIndex = this.tasks.findIndex((task) => task.id === id);
             if (foundIndex !== -1) {
-                this.tasks[foundIndex].name = name;
+                this.tasks[foundIndex].name = task.name;
             }
         },
     },

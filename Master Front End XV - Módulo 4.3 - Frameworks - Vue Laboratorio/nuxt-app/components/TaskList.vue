@@ -5,18 +5,24 @@
           <span v-if="task.completed" class="mr-2">
             <Icon name="streamline-emojis:sparkles" />
           </span>
-          <span :class="{ 'line-through': task.completed }">{{ task.name }}</span>
+          <span v-if="task.id === idEditable "> 
+            <input class="border border-gray-400 p-1" 
+            v-model="task.name"
+            />
+          </span><span v-else :class="{ 'line-through': task.completed }"> {{ task.name }}
+          </span>
         </div>
         <div class="flex items-center space-x-2">
-          <button @click="toggleTask(task.id)" class=" ml-2 px-2 py-1 bg-blue-500 text-white rounded">
-            <Icon name="fxemoji:pencil" />
-            {{ task.completed ? 'Desmarcar' : 'Marcar' }}
-          </button>
-          <button @click="removeTask(task.id)" class="px-2 py-1 bg-red-500 text-white rounded">
-            <Icon name="fxemoji:ballottboxwithscriptx" /> Eliminar
-          </button>
-          <button @click="editTask(task.id, task.name)" class="px-2 py-1 bg-red-500 text-white rounded">
-            <Icon name="fxemoji:ballottboxwithscriptx" /> Editar
+            <button @click="toggleTask(task.id)" class=" ml-2 px-2 py-1 bg-blue-500 text-white rounded">
+              <Icon name="fxemoji:pencil" />
+              {{ task.completed ? 'Desmarcar' : 'Marcar' }}
+            </button>
+            <button @click="removeTask(task.id)" class="px-2 py-1 bg-red-500 text-white rounded">
+              <Icon name="fxemoji:ballottboxwithscriptx" /> Eliminar
+            </button>
+            <button @click="editTask(task.id)" class="px-2 py-1 bg-red-500 text-white rounded">
+              <Icon name="fxemoji:ballottboxwithscriptx" /> Editar
+              //TODO : terminar la edicion cambiar isEditing a false
           </button>
         </div>
     </li>
@@ -24,7 +30,14 @@
 <p v-else class="text-gray-500 mt-4">No hay tareas disponibles!.</p>
   </template>
   <script>
+  
   export default {
+    data() {
+      return {
+        isEditing: false,
+        idEditable: null
+      };
+    },
     props: {
       tasks: Array, // Deberías pasar las tareas como prop desde la página principal
     },
@@ -35,10 +48,12 @@
       removeTask(id) {
         this.$emit('remove-task', id);
       },
-      editTask(id, name) {
-        console.log("editTask", id, name);
-        this.$emit('edit-task', id, name);}
+      editTask(id) {
+        console.log('id', id)
+        this.idEditable = id;
+        this.isEditing = true;
     },
+  }
   };
   </script>
   
