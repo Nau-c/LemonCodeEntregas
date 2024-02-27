@@ -1,15 +1,15 @@
 <template>
     <ul v-if="tasks.length > 0" class="divide-y">
-      <li v-for="(task, index) in tasks" :key="index" class="flex flex-col md:flex-row items-center justify-between p-2">
+      <li v-for="(task, index) in tasks" :key="index" class="flex flex-col md:flex-row items-center justify-between p-2 bg-white shadow-md rounded-lg mb-2">
         <div class="flex items-center mb-2 md:mb-0">
-          <span v-if="task.completed" class="mr-2">
+          <span v-if="task.completed" class="mr-2 text-green-500">
             <Icon name="streamline-emojis:sparkles" />
           </span>
           <span v-if="task.id === idEditable "> 
-            <input class="border border-gray-400 p-1" 
+            <input class="border border-gray-400 p-1 focus:outline-none focus:ring focus:border-blue-300 rounded-md" 
             v-model="task.name"
             />
-          </span><span v-else :class="{ 'line-through': task.completed }"> {{ task.name }}
+          </span><span v-else :class="{ 'line-through': task.completed, 'text-gray-700': !task.completed }"> {{ task.name }}
           </span>
         </div>
         <div class="flex items-center space-x-2">
@@ -17,16 +17,16 @@
               <Icon name="flat-color-icons:ok" />
               {{ task.completed ? 'Desmarcar' : 'Marcar' }}
             </button>
-            <button @click="removeTask(task.id)" class="px-2 py-1 bg-red-500 text-white rounded">
+            <button @click="removeTask(task.id)" class="px-2 py-1 bg-red-500 text-white rounded focus:outline-none focus:ring focus:border-red-300">
               <Icon name="fxemoji:ballottboxwithscriptx" /> Eliminar
             </button>
-            <button v-if="isEditing" @click="saveTask(task.id)" class="px-2 py-1 bg-green-500 text-white rounded">
+            <button v-if="isEditing" @click="saveTask(task.id)" class="px-2 py-1 bg-green-500 text-white rounded focus:outline-none focus:ring focus:border-green-300">
           <Icon name="dashicons:cloud-saved" /> Guardar
         </button>
-        <button v-if="isEditing" @click="cancelEdit" class="px-2 py-1 bg-red-500 text-white rounded">
+        <button v-if="isEditing" @click="cancelEdit" class="px-2 py-1 bg-red-500 text-white rounded focus:outline-none focus:ring focus:border-red-300">
           <Icon name="lets-icons:cancel-fill" /> Cancelar
         </button>
-        <button v-else @click="editTask(task.id)" class="px-2 py-1 bg-red-500 text-white rounded">
+        <button v-else @click="editTask(task.id)" class="px-2 py-1 bg-yellow-500 text-white rounded focus:outline-none focus:ring focus:border-yellow-300">
           <Icon name="fxemoji:pencil" /> Editar
         </button>
         </div>
