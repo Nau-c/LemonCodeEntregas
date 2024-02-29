@@ -1,6 +1,7 @@
 <template>
-    <div>
+    <div class="flex">
       <!-- Display incomplete tasks -->
+      <div class="flex-1">
       <h2 v-if="incompleteTasks.length > 0" class="mt-4 text-2xl font-bold text-indigo-600 mb-4">Lista pendientes:</h2>
       <ul v-if="incompleteTasks.length > 0" class="divide-y">
         <li v-for="(task, index) in incompleteTasks" :key="index" class="flex flex-col md:flex-row items-center justify-between p-2 bg-white shadow-md rounded-lg mb-2">
@@ -35,7 +36,9 @@
       </ul>
       
       <p v-else class="text-white text-2xl font-bold mt-4">No hay tareas disponibles!.</p>
+    </div>
       <!-- Display completed tasks -->
+      <div class="ml-4 flex-2">
       <h2 v-if="completedTasks.length > 0" class="mt-4 text-2xl font-bold text-green-600">Lista completadas:</h2>
       <ul v-if="completedTasks.length > 0" class="mt-4 divide-y">
         <li v-for="(task, index) in completedTasks" :key="index" class="flex flex-col md:flex-row items-center justify-between p-2 bg-white shadow-md rounded-lg mb-2">
@@ -53,7 +56,7 @@
           </div>
         </li>
       </ul>
-  
+    </div>
     </div>
   </template>
   
