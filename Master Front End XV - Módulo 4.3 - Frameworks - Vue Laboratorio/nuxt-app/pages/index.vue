@@ -1,6 +1,8 @@
 <template>
+
       <TaskInput @addTask="addTask"/>
       <TaskList :tasks="tasks" @removeTask="removeTask" @toggleTask="toggleTask" @editTask="editTask"/>
+    
 </template>
   
 <script lang="ts">
